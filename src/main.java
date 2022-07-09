@@ -1,15 +1,21 @@
+import java.util.Scanner;
+
 public class main {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-      Stack<String> stack = new Stack<>();
 
-      stack.push("aaaa");
-      stack.push("bbbb");
-      stack.push("cccc");
+        Purchase purchase = new Purchase();
 
-      stack.pop();
+        System.out.println("Введите покупку");
+        System.out.println("Название, цену и тип");
 
-      stack.peek();
+        purchase.setName(scanner.next());
 
-      stack.print();
+        purchase.setPrice(scanner.nextDouble());
+
+        purchase.setType(Type.getByType(scanner.next()));
+
+        System.out.println("Вы ввели : " + purchase);
+
     }
 }
